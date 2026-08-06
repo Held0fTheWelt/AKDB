@@ -4,6 +4,19 @@ ArchitecturalKnowledgeDB (AKDB) is a proprietary, local-first architecture knowl
 
 This repository is the public showcase for AKDB. It demonstrates the problems addressed, the workflows supported, and the kinds of outputs teams can receive. It does **not** contain the AKDB implementation, private source code, customer data, or the internal operating model.
 
+## Current status
+
+**Status date: 6 August 2026.** AKDB has a substantial, testable internal engineering baseline with
+project-scoped architecture knowledge, source provenance, search and context assembly, drift and
+change-impact analysis, SQLite/PostgreSQL storage paths, and CLI, API, and MCP access. Current work
+extends that baseline with governed write authority, supervised agent execution, recovery,
+observability, secret handling, and repeatable release validation.
+
+AKDB is an engineering preview, not a generally available production product. Internal technical
+breadth has been demonstrated; operation on an independent customer repository, external security
+review, repeatable delivery, and product-market evidence have not yet been demonstrated. See
+[Status and Outlook](STATUS_AND_OUTLOOK.md) for the evidence boundary, release gates, and roadmap.
+
 ## The problem
 
 Software architecture knowledge is distributed across ADRs, diagrams, documentation, source trees, Git history, rules, and team memory. A search result or an LLM context window does not tell you which information is authoritative, what it affects, or whether it is still valid.
@@ -24,6 +37,7 @@ Software architecture knowledge is distributed across ADRs, diagrams, documentat
 - [Example workflows](workflows/README.md)
 - [Example outputs](reports/README.md)
 - [Client outcomes](CLIENT_OUTCOMES.md)
+- [Status and outlook](STATUS_AND_OUTLOOK.md)
 
 ## Services
 
@@ -31,6 +45,9 @@ AKDB is developed and delivered as part of independent software architecture and
 
 For implementation, integration, or a project-specific assessment, contact the author directly.
 
-## Intellectual property
+## Public disclosure boundary
 
-AKDB is proprietary technology. This repository contains descriptive material and illustrative examples only. The examples are synthetic and do not represent customer projects.
+Everything in this repository is intentionally approved for public disclosure. It contains no
+trade secrets, credentials, customer data, or non-public implementation source. AKDB remains
+proprietary technology; the descriptive material and synthetic examples in this showcase do not
+grant access to the implementation and do not represent customer projects.
