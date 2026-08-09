@@ -10,4 +10,8 @@
 
 **Warnings:** one diagram is stale; one interface reference is deprecated.
 
+**Provenance:** each decision, constraint, and warning retains its source reference and revision.
+
+**Uncertainty:** the current adapter ownership is not explicit and requires architecture-owner review.
+
 **Recommended review:** platform architecture and security.

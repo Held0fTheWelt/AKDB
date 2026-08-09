@@ -6,15 +6,16 @@ This repository is the public showcase for AKDB. It demonstrates the problems ad
 
 ## Current status
 
-**Status date: 6 August 2026.** AKDB has a substantial, testable internal engineering baseline with
-project-scoped architecture knowledge, source provenance, search and context assembly, drift and
-change-impact analysis, SQLite/PostgreSQL storage paths, and CLI, API, and MCP access. Current work
-extends that baseline with governed write authority, supervised agent execution, recovery,
-observability, secret handling, and repeatable release validation.
+**Status date: 10 August 2026.** The packaged baseline remains version `0.3.0`. The latest reviewed,
+versioned internal implementation (through 8 August 2026) extends its project-scoped architecture
+knowledge, provenance, search, context assembly, drift, and change-impact workflows with a governed
+pilot path for supervised agent changes, append-only knowledge revision history, recovery evidence,
+observability, and reproducible packaging controls.
 
-AKDB is an engineering preview, not a generally available production product. Internal technical
-breadth has been demonstrated; operation on an independent customer repository, external security
-review, repeatable delivery, and product-market evidence have not yet been demonstrated. See
+AKDB is an engineering preview, not a generally available production product. These post-`0.3.0`
+capabilities are internal, unreleased evidence rather than shipped promises. Operation on an
+independent customer repository, external security review, repeatable customer delivery, and
+product-market evidence have not yet been demonstrated. See
 [Status and Outlook](STATUS_AND_OUTLOOK.md) for the evidence boundary, release gates, and roadmap.
 
 ## The problem
@@ -28,7 +29,24 @@ Software architecture knowledge is distributed across ADRs, diagrams, documentat
 - Drift and stale-knowledge signals across documentation and the current system
 - Compact, task-specific context packs instead of undifferentiated prompt dumps
 - Reviewable change-impact and architecture-review outputs
+- A bounded governed-change pilot path with explicit scope, leases, evidence gates, and human approval
 - Local-first operation suitable for sensitive or long-lived software projects
+
+## What is demonstrated internally
+
+- The core knowledge model and its CLI, API, and MCP read workflows are implemented and testable.
+- A defined pilot profile can control parallel agent changes through sealed repository/context
+  snapshots, explicit write sets, leases, evidence gates, and human promotion decisions.
+- A reference scenario and a synthetic load scenario with five separate human principals and five
+  agents are automated for both SQLite and PostgreSQL.
+- Overlapping write sets, expired or revoked leases, failed gates, and agent-side promotion attempts
+  are handled fail-closed in that defined profile.
+- Local validation covers full-text search, drift analysis, the governed-change cycle, packaging,
+  dependency evidence, and isolated recovery/reconciliation.
+
+This is implementation evidence from maintainer-controlled and synthetic environments. It is not a
+claim of customer validation, production readiness, ROI, compliance certification, or universal
+protection against administrators and direct database access.
 
 ## Explore the showcase
 
@@ -41,7 +59,10 @@ Software architecture knowledge is distributed across ADRs, diagrams, documentat
 
 ## Services
 
-AKDB is developed and delivered as part of independent software architecture and AI engineering services. Typical engagements include architecture knowledge assessments, project onboarding, drift analysis, agent-context integration, and ongoing architecture knowledge maintenance.
+AKDB is developed and delivered as part of independent software architecture and AI engineering
+services. Typical engagements include architecture knowledge assessments, project onboarding,
+drift analysis, agent-context integration, governed pilot preparation, and ongoing architecture
+knowledge maintenance.
 
 For implementation, integration, or a project-specific assessment, contact the author directly.
 

@@ -6,3 +6,4 @@ The examples in this folder are synthetic. They show how AKDB can support practi
 - [Architecture drift](02-architecture-drift.md)
 - [Change impact](03-change-impact.md)
 - [Architecture review](04-architecture-review.md)
+- [Governed agent change](05-governed-agent-change.md)
