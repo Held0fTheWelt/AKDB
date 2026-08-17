@@ -1,18 +1,30 @@
-# AKDB Status and Outlook
+# Status and Outlook
 
-**Status date:** 10 August 2026
+**Status date:** 17 August 2026
 
-**Release baseline:** `0.3.0`
-
-**Latest reviewed versioned implementation:** 8 August 2026
+**AKDB release baseline:** `0.3.0`
 
 This document separates what exists today from what still has to be demonstrated. It describes the
-project at a public, decision-useful level and contains no trade secrets, credentials, customer data,
-or non-public implementation details.
+work at a public, decision-useful level and contains no trade secrets, credentials, customer data,
+commercial terms, or non-public implementation details.
+
+## Component maturity
+
+Maturity differs sharply between the pieces, and the difference is the point of this table. Nothing
+below is a shipped promise except where it says so.
+
+| Component | Maturity | What that means |
+|---|---|---|
+| ArchitecturalKnowledgeDB | Engineering preview, packaged baseline `0.3.0` | Implemented and testable; later capabilities are versioned internal implementation, not a declared release |
+| ContextOps control plane | Implemented internally, unreleased | Runs for the maintainer's own work; no external operation, no delivery model |
+| Agent Collaboration Plane | Architecture accepted, read layer implemented | Client-agnostic MCP reads work; the wider operating model is partly built |
+| Tiny Tool Observatory | Implemented local workbench | Internal maintainer tooling; not offered as a product |
+| Documentation pipeline | In continuous internal use | Applied to the maintainer's own corpus daily; the source of most found defects |
+| Augmented Operator | Target architecture, **not created** | Reviewed intent with a specified target; no implementation exists |
 
 ## Current position
 
-AKDB has a substantial internal engineering baseline. The implementation supports:
+The implementation supports:
 
 - project-scoped architecture knowledge and explicit shared spaces;
 - decisions, rules, diagrams, source areas, symbols, definitions, and provenance;
@@ -20,9 +32,10 @@ AKDB has a substantial internal engineering baseline. The implementation support
 - drift, stale-knowledge, and change-impact analysis;
 - read-only Git evidence and source-anchored outputs;
 - SQLite and PostgreSQL storage paths;
-- CLI, API, and MCP access; and
+- CLI, API, and MCP access;
 - DB-native architecture-document and UML authoring with deterministic export;
-- a governed pilot profile for bounded, supervised agent changes; and
+- a governed pilot profile for bounded, supervised agent changes;
+- an external-host protocol under which agent work is claimed by lease rather than spawned; and
 - append-only revision, observability, recovery, and reproducible package-validation foundations.
 
 The packaged release remains `0.3.0`; later capabilities are versioned internal implementation and
@@ -37,14 +50,16 @@ externally validated customer software.
 - the core knowledge model and primary workflows are implemented and testable;
 - multiple access surfaces operate over the same architectural knowledge;
 - the implementation can ingest, relate, search, review, and export architecture information;
-- local-first and self-hosted operating paths are part of the design; and
+- local-first and self-hosted operating paths are part of the design;
 - a defined governed-change profile uses sealed context/repository snapshots, explicit write sets,
   leases, evidence gates, and human promotion decisions;
 - overlapping write sets, invalid leases, failed gates, and agent promotion attempts fail closed in
   that profile;
 - reference and synthetic five-human/five-agent scenarios are automated for SQLite and PostgreSQL;
 - ADR and DB-canonical document changes have append-only revisions, stale-write protection,
-  approval references, and revert-as-new-revision; and
+  approval references, and revert-as-new-revision;
+- the documentation pipeline is exercised continuously against the maintainer's own architecture
+  corpus, including its export, drift, link, and traceability gates; and
 - local benchmark, packaging, dependency, observability, and isolated recovery evidence exists.
 
 ### Still to be demonstrated externally
@@ -66,7 +81,7 @@ ROI, high availability, RPO/RTO, multi-tenancy, or compliance certification.
 
 ## Current development focus
 
-Current work concentrates on four connected areas:
+Current work concentrates on five connected areas:
 
 1. **External transferability:** prove decision value on a repository outside the maintainer's test
    estate, beginning read-only or with a narrowly governed write scope.
@@ -76,13 +91,15 @@ Current work concentrates on four connected areas:
    restore exercises, and realistic operator/support measurements.
 4. **Delivery evidence:** define the bounded service or product package, customer responsibilities,
    deletion and rollback terms, and measurable acceptance criteria.
+5. **Closing the record:** make every published artefact derivable from the authority, so that no
+   part of the documentation survives only because a repair routine knows where to find it.
 
-These are active development areas, not shipped promises. A capability becomes part of a release
-only after it is versioned, documented, and validated on the same revision.
+These are active development areas, not shipped promises. A capability becomes part of a release only
+after it is versioned, documented, and validated on the same revision.
 
 ## Release gates
 
-Before a broader release, AKDB should demonstrate:
+Before a broader release, the stack should demonstrate:
 
 - a clean, reproducible test and package-validation run;
 - consistent CLI, API, and MCP startup from a clean installation;
@@ -94,10 +111,14 @@ Before a broader release, AKDB should demonstrate:
 
 ## Outlook
 
-AKDB addresses a durable problem: teams and coding agents need architecture context that is more
-authoritative, traceable, and reviewable than a search result or prompt-sized document dump. Its
+The stack addresses a durable problem: teams and coding agents need architecture context that is more
+authoritative, traceable, and reviewable than a search result or a prompt-sized document dump. The
 credible opportunity is a sovereign context and control layer for complex or sensitive software
-systems.
+systems — one that stays local, keeps its record inspectable, and puts a human at the decision point.
+
+The direction beyond that is stated openly and marked as intent: making operator functions usable
+away from a desk, as spatial workflows on a headset, with the device owning its runtimes and local
+data rather than mirroring a remote UI. That target architecture is reviewed. It is not built.
 
 The outlook remains deliberately evidence-led:
 
@@ -105,12 +126,12 @@ The outlook remains deliberately evidence-led:
    revision.
 2. **Run a bounded external pilot.** Start read-only or with a narrowly governed write scope and
    agree access, deletion, review, rollback, and success criteria in advance.
-3. **Measure repetition.** Record accuracy, missing context, operator effort, runtime, recovery,
-   and decision value across independent cycles.
+3. **Measure repetition.** Record accuracy, missing context, operator effort, runtime, recovery, and
+   decision value across independent cycles.
 4. **Choose the operating model.** Decide between a focused expert service, partner-operated
    deployment, or supported product only after external evidence exists.
-5. **Scale selectively.** Pursue multi-tenancy, broad integrations, high availability, or team
-   growth only when observed demand makes one of them a real constraint.
+5. **Scale selectively.** Pursue multi-tenancy, broad integrations, high availability, or team growth
+   only when observed demand makes one of them a real constraint.
 
-A smaller dependable deployment is a valid outcome. Platform scale is an option, not the
-definition of success.
+A smaller dependable deployment is a valid outcome. Platform scale is an option, not the definition
+of success.

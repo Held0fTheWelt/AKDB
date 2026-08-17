@@ -29,3 +29,25 @@ The core questions are:
 
 The relevant operating pressure is the number and dependency of concurrent changes relative to the
 capacity to review and approve them—not a fixed minimum number of developers.
+
+## Why there is tooling around it
+
+A knowledge layer answers *what is true*. It does not by itself answer *who may change what, under
+which evidence, and what happens when two changes overlap*. Those are different questions, and
+answering them inside the knowledge layer would turn the record into a workflow engine — which is
+exactly how records stop being trustworthy.
+
+So the surrounding tools are deliberately separate and deliberately subordinate:
+
+- a **control plane** compiles and executes bounded work *from* the record, and is never allowed to
+  become a second authority for it;
+- an **access model** keeps agent reads cheap and agent writes scoped, through one client-agnostic
+  interface rather than one vendor's;
+- an **evidence view** collects what the other tools produced, without claiming to have produced it;
+  and
+- a **documentation pipeline** compiles published artefacts from the record, so that a document can
+  never quietly become the newer truth.
+
+Each is useful without the others. None of them is allowed to overrule the record. That constraint
+is what makes the record worth keeping.
+
