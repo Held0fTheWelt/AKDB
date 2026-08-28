@@ -15,18 +15,24 @@ commercial terms, or the internal operating model.
 
 ## Current status
 
-**Status date: 17 August 2026.** The packaged AKDB baseline remains version `0.3.0`. The latest
-reviewed, versioned internal implementation extends its project-scoped architecture knowledge,
+**Status date: 28 August 2026.** The packaged AKDB baseline remains version `0.3.0`. The current
+governed work is P0 (`plan-akdb-p0-truth-integrity`, revision 7, approved) on pin
+`p0/plan-pin-f4129d7`. Waves 1–5 of that plan are merged onto the pin. P0 is not complete; later P0
+waves are not done. P1 is locked until P0 completes and the C1–C5 bundle is revised. Later phases,
+including P6, are not in progress. This page does not claim that CI is green.
+
+The latest reviewed, versioned internal implementation extends project-scoped architecture knowledge,
 provenance, search, context assembly, drift, and change-impact workflows with a governed pilot path
 for supervised agent changes, append-only knowledge revision history, recovery evidence,
-observability, and reproducible packaging controls.
+observability, and reproducible packaging controls. Those capabilities remain engineering-preview
+work, not a declared broader release.
 
 AKDB is an engineering preview, not a generally available production product. The tools described
 below are internal implementations at varying maturity, from running systems to stated target
 architecture. Everything on this page distinguishes the two. Operation on an independent customer
 repository, external security review, repeatable customer delivery, and product-market evidence have
-not yet been demonstrated. See [Status and Outlook](STATUS_AND_OUTLOOK.md) for the evidence boundary,
-the release gates, and the roadmap.
+not yet been demonstrated. See [Status and Outlook](STATUS_AND_OUTLOOK.md) for the P0 pin record, the
+named exceptions, the evidence boundary, and the outlook.
 
 ## The problem
 
@@ -52,11 +58,12 @@ PostgreSQL storage paths; CLI, API, and MCP access over the same knowledge.
 
 **ContextOps — the control plane.**
 Compiles and executes work *from* canonical knowledge while never becoming an alternative authority
-for it. Bounded agent work runs under an external-host protocol: the server does not start agent
-processes as children. Hosts register, claim queued work under a lease, heartbeat, emit idempotent
-events, and complete or fail explicitly. Around that sit attention and read-tier policies, an
-append-only ledger, participant presence and floor coordination, and structured team-meeting
-contracts.
+for it. Live operational truth is PostgreSQL; jobs, runs, and leases are the execution ledger.
+Bounded agent work runs under an external-host protocol: the server does not start agent processes
+as children, and hosts pull work through `/agent-hosts/claims` rather than an in-process `/dispatch`.
+Hosts register, claim queued work under a lease, heartbeat, emit idempotent events, and complete or
+fail explicitly. Around that sit attention and read-tier policies, an append-only ledger, participant
+presence and floor coordination, and structured team-meeting contracts.
 
 **Agent Collaboration Plane — the access model.**
 One client-agnostic MCP layer so that any agent — Claude Code, Codex, Cursor, or another MCP client —
@@ -107,8 +114,8 @@ marked so that nobody mistakes intent for delivery.
   dependency evidence, and isolated recovery/reconciliation.
 
 This is implementation evidence from maintainer-controlled and synthetic environments. It is not a
-claim of customer validation, production readiness, ROI, compliance certification, or universal
-protection against administrators and direct database access.
+claim of customer validation, production readiness, ROI, compliance certification, CI green, P0
+completion, or universal protection against administrators and direct database access.
 
 ## Explore the showcase
 

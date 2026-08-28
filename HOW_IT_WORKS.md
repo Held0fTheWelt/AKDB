@@ -71,10 +71,11 @@ administrator from bypassing every application-level control.
 
 ## How agents are attached
 
-Agent work is pulled, not pushed. The control plane does not start agent processes as children of
-itself; an external host registers, claims queued work under a lease, heartbeats while it runs, emits
-idempotent events, and completes or fails explicitly. Two consequences matter more than the
-mechanism:
+Agent work is pulled, not pushed. ContextOps live operational truth is PostgreSQL; jobs, runs, and
+leases are the execution ledger. The control plane does not start agent processes as children of
+itself. An external host registers and claims queued work at `/agent-hosts/claims` under a lease —
+not through an in-process `/dispatch` — then heartbeats while it runs, emits idempotent events, and
+completes or fails explicitly. Two consequences matter more than the mechanism:
 
 - **A crashed or disappearing agent is a recoverable state**, not a corrupted one. The lease expires
   and the work returns to the queue.

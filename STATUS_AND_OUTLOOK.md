@@ -1,6 +1,6 @@
 # Status and Outlook
 
-**Status date:** 17 August 2026
+**Status date:** 28 August 2026
 
 **AKDB release baseline:** `0.3.0`
 
@@ -16,7 +16,7 @@ below is a shipped promise except where it says so.
 | Component | Maturity | What that means |
 |---|---|---|
 | ArchitecturalKnowledgeDB | Engineering preview, packaged baseline `0.3.0` | Implemented and testable; later capabilities are versioned internal implementation, not a declared release |
-| ContextOps control plane | Implemented internally, unreleased | Runs for the maintainer's own work; no external operation, no delivery model |
+| ContextOps control plane | Implemented internally, unreleased | PostgreSQL is live operational truth; jobs, runs, and leases are the execution ledger; no external operation, no delivery model |
 | Agent Collaboration Plane | Architecture accepted, read layer implemented | Client-agnostic MCP reads work; the wider operating model is partly built |
 | Tiny Tool Observatory | Implemented local workbench | Internal maintainer tooling; not offered as a product |
 | Documentation pipeline | In continuous internal use | Applied to the maintainer's own corpus daily; the source of most found defects |
@@ -35,13 +35,42 @@ The implementation supports:
 - CLI, API, and MCP access;
 - DB-native architecture-document and UML authoring with deterministic export;
 - a governed pilot profile for bounded, supervised agent changes;
-- an external-host protocol under which agent work is claimed by lease rather than spawned; and
+- an external-host protocol under which agent work is claimed by lease at `/agent-hosts/claims`,
+  not dispatched in-process at `/dispatch`; and
 - append-only revision, observability, recovery, and reproducible package-validation foundations.
 
 The packaged release remains `0.3.0`; later capabilities are versioned internal implementation and
 have not yet been declared a broader release. The system is currently an engineering preview. It is
 not presented as a generally available production service, a completed enterprise platform, or
 externally validated customer software.
+
+## P0 integrity program
+
+Current governed work is P0, not a product-scale-out phase.
+
+- **Plan:** `plan-akdb-p0-truth-integrity`, revision 7, approved.
+- **Plan hash:** `49eeeb5255935c5c658378dd1da5165c159b1a88f23c3a0426d4eadedec90e24`.
+- **Pin:** `p0/plan-pin-f4129d7`.
+
+Waves 1–4 were merged onto that pin. Wave 5 (`p0-validation-findings`) is also merged onto the pin:
+PR #8 merge `6fb7a9f` (parents `fe4bddbc` + `d4841d2`); PR #9 merge `bb60575` (parents `6fb7a9f` +
+`f5e63cf`). Those identifiers refer to the private implementation record; they are not public
+repository URLs.
+
+P0 is not complete. Later P0 waves are not done. This page does not claim that CI is green.
+
+Named master-profile exceptions remain in force:
+
+- `src_akdb_cli`
+- `src_contextops_api` (N-1)
+- time-limited `src_akdb_mcp`
+- migrations file count 87 → 89 → 91, by approved migrations
+
+Those exceptions close at C1–C5 **before P1**. P1 is locked until P0 completes **and** the C1–C5
+bundle is revised. Later phases, including P6, are not in progress.
+
+A `kind: git_revision` marker is not a verified content-integrity anchor. It is matched by regex
+only; it is not checked against git.
 
 ## Evidence boundary
 
@@ -81,7 +110,11 @@ ROI, high availability, RPO/RTO, multi-tenancy, or compliance certification.
 
 ## Current development focus
 
-Current work concentrates on five connected areas:
+The active governed work is P0, as described above. Until P0 completes and the C1–C5 bundle is
+revised, P1 and later phases are not in progress.
+
+After that lock lifts, the release path still has to demonstrate the following. These are not a
+schedule, not a claim that the work has started, and not shipped promises:
 
 1. **External transferability:** prove decision value on a repository outside the maintainer's test
    estate, beginning read-only or with a narrowly governed write scope.
@@ -94,8 +127,8 @@ Current work concentrates on five connected areas:
 5. **Closing the record:** make every published artefact derivable from the authority, so that no
    part of the documentation survives only because a repair routine knows where to find it.
 
-These are active development areas, not shipped promises. A capability becomes part of a release only
-after it is versioned, documented, and validated on the same revision.
+A capability becomes part of a release only after it is versioned, documented, and validated on the
+same revision.
 
 ## Release gates
 
