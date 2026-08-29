@@ -26,6 +26,8 @@ The core questions are:
 5. What should an engineer or coding agent know before making a change?
 6. Who may change which area, using what evidence and review path?
 7. What happens when scope overlaps, authority expires, or a gate fails?
+8. Which structural, behavioral, requirements, and assurance view does a human stakeholder need?
+9. Which knowledge may an agent carry temporarily between tasks or modules, and when must it expire?
 
 The relevant operating pressure is the number and dependency of concurrent changes relative to the
 capacity to review and approve them—not a fixed minimum number of developers.
@@ -50,4 +52,3 @@ So the surrounding tools are deliberately separate and deliberately subordinate:
 
 Each is useful without the others. None of them is allowed to overrule the record. That constraint
 is what makes the record worth keeping.
-

@@ -15,17 +15,16 @@ commercial terms, or the internal operating model.
 
 ## Current status
 
-**Status date: 28 August 2026.** The packaged AKDB baseline remains version `0.3.0`. The current
-governed work is P0 (`plan-akdb-p0-truth-integrity`, revision 7, approved) on pin
-`p0/plan-pin-f4129d7`. Waves 1–5 of that plan are merged onto the pin. P0 is not complete; later P0
-waves are not done. P1 is locked until P0 completes and the C1–C5 bundle is revised. Later phases,
-including P6, are not in progress. This page does not claim that CI is green.
+**Status date: 29 August 2026.** AKDB version `0.4.0` integrates the P0-P13 governance and evidence
+chain. It adds project-isolated SysML v2 repositories and reconciliation, stakeholder viewpoints,
+assurance cases, bitemporal task/plan/module memory workspaces, governed connectors, and a
+PostgreSQL-first operating model. The package, API, CLI, and MCP surfaces report the same version;
+the release validator reproduces the wheel and checks those surfaces from a clean installation.
 
-The latest reviewed, versioned internal implementation extends project-scoped architecture knowledge,
-provenance, search, context assembly, drift, and change-impact workflows with a governed pilot path
-for supervised agent changes, append-only knowledge revision history, recovery evidence,
-observability, and reproducible packaging controls. Those capabilities remain engineering-preview
-work, not a declared broader release.
+This is still an engineering-preview boundary, not a claim that every environment, integration, or
+deployment profile is production-ready. External pilot evidence, independent security review,
+licensing/distribution decisions, and a full clean-revision validation remain explicit gates. This
+page does not turn partial or isolated test evidence into a general "CI green" claim.
 
 AKDB is an engineering preview, not a generally available production product. The tools described
 below are internal implementations at varying maturity, from running systems to stated target
@@ -53,8 +52,9 @@ becoming a precondition for the one below.
 **[ArchitecturalKnowledgeDB](WHY_AKDB.md) — the knowledge layer.**
 Project-scoped architecture knowledge: decisions, rules, diagrams, source areas, symbols,
 definitions, provenance, and the relations between them. Search, task-specific context assembly,
-drift and stale-knowledge signals, change-impact analysis, read-only Git evidence. SQLite and
-PostgreSQL storage paths; CLI, API, and MCP access over the same knowledge.
+drift and stale-knowledge signals, change-impact analysis, read-only Git evidence, and immutable
+project-local SysML v2 commit graphs. PostgreSQL is live authority; SQLite is the verified portable
+backup and offline mode. CLI, API, and MCP operate over the same knowledge contracts.
 
 **ContextOps — the control plane.**
 Compiles and executes work *from* canonical knowledge while never becoming an alternative authority
@@ -95,6 +95,9 @@ marked so that nobody mistakes intent for delivery.
 - Relationships between decisions, diagrams, source areas, symbols, and provenance
 - Drift and stale-knowledge signals across documentation and the current system
 - Compact, task-specific context packs instead of undifferentiated prompt dumps
+- Human-readable structural, behavioral, requirements, and evidence views through per-project
+  SysML v2 and stakeholder projections
+- Temporarily bridgeable agent memory bounded by task, plan, module, session, sensitivity, and TTL
 - Reviewable change-impact and architecture-review outputs
 - A bounded governed-change path with explicit scope, leases, evidence gates, and human approval
 - Local-first operation suitable for sensitive or long-lived software projects
@@ -110,6 +113,8 @@ marked so that nobody mistakes intent for delivery.
   are handled fail-closed in that defined profile.
 - The documentation pipeline runs against the maintainer's own architecture corpus — the stack is
   applied to itself, which is where most of its defects are found.
+- Existing records for six maintained projects have been reconciled into separate SysML v2 models;
+  the models remain separate even where products belong to the same solution family.
 - Local validation covers full-text search, drift analysis, the governed-change cycle, packaging,
   dependency evidence, and isolated recovery/reconciliation.
 

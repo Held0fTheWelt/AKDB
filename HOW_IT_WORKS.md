@@ -7,12 +7,14 @@ that same knowledge — without any of them becoming a second authority for it.
 ```text
 Project sources
     ├── ADRs and architecture documents
-    ├── UML, PlantUML, and Mermaid
+    ├── UML, PlantUML, Mermaid, and SysML v2 interchange
     ├── rules, definitions, and structured files
     └── registered repository and Git evidence
               │
               ▼
       Structured architecture knowledge          ← AKDB: the record
+              │
+      Project-local SysML v2 history              ← human visibility, not a second authority
               │
        ┌──────┴──────────────┬───────────────────┐
        ▼                     ▼                   ▼
@@ -41,6 +43,8 @@ evaluates knowledge so that people and coding agents can use it before a change 
   can disagree with the conclusion and still trust the number.
 - **The human decides.** Automated analysis prepares a change. A person approves it. No agent
   promotes its own work.
+- **Projects remain isolated.** Each project owns its PostgreSQL authority and SysML history.
+  Products may share a solution family without sharing records, permissions, or commit graphs.
 
 ## Typical loop
 
@@ -50,6 +54,11 @@ evaluates knowledge so that people and coding agents can use it before a change 
 4. Review decisions, constraints, relationships, and drift signals.
 5. Make the change in the owning source files.
 6. Reconcile the knowledge view after the change.
+
+For long-running work, the context pack can be supplemented by bitemporal memory workspaces scoped
+to a task, plan, module, agent, or session. Explicit handoffs bridge selected knowledge temporarily;
+TTL, sensitivity, egress policy, and token budget prevent the bridge from becoming an ungoverned
+global memory.
 
 ## Governed change loop
 

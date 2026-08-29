@@ -10,6 +10,8 @@ after the engagement ends.
 - source-anchored context packs for recurring engineering tasks;
 - a report of stale, contradictory, or disconnected architecture knowledge;
 - a change-impact view before a major refactoring or feature;
+- separate human-readable structural, behavioral, requirements, and evidence views generated from
+  a project-local SysML v2 history;
 - an onboarding package for engineers joining a complex project; and
 - a repeatable workflow for keeping architecture knowledge useful over time.
 
@@ -17,6 +19,8 @@ after the engagement ends.
 
 - a client-agnostic access path, so the team is not locked to one agent product;
 - context assembly tuned for a concrete task instead of undifferentiated prompt dumps;
+- bounded temporal memory and explicit handoffs across a task, plan, or module without collapsing
+  project knowledge bases into one global agent memory;
 - explicit scope boundaries: which projects, paths, and tools an agent may touch;
 - a review path where the agent prepares and a human decides; and
 - where appropriate, a bounded governed-change pilot with evidence gates, human approval, and a

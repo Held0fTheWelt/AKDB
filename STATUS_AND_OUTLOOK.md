@@ -1,8 +1,8 @@
 # Status and Outlook
 
-**Status date:** 28 August 2026
+**Status date:** 29 August 2026
 
-**AKDB release baseline:** `0.3.0`
+**AKDB release line:** `0.4.0`
 
 This document separates what exists today from what still has to be demonstrated. It describes the
 work at a public, decision-useful level and contains no trade secrets, credentials, customer data,
@@ -15,7 +15,7 @@ below is a shipped promise except where it says so.
 
 | Component | Maturity | What that means |
 |---|---|---|
-| ArchitecturalKnowledgeDB | Engineering preview, packaged baseline `0.3.0` | Implemented and testable; later capabilities are versioned internal implementation, not a declared release |
+| ArchitecturalKnowledgeDB | Engineering preview, release line `0.4.0` | P0-P13, SysML v2, governed evidence, and temporal memory are implemented; broader production readiness is not claimed |
 | ContextOps control plane | Implemented internally, unreleased | PostgreSQL is live operational truth; jobs, runs, and leases are the execution ledger; no external operation, no delivery model |
 | Agent Collaboration Plane | Architecture accepted, read layer implemented | Client-agnostic MCP reads work; the wider operating model is partly built |
 | Tiny Tool Observatory | Implemented local workbench | Internal maintainer tooling; not offered as a product |
@@ -31,46 +31,30 @@ The implementation supports:
 - searchable, task-specific context assembly for people and coding agents;
 - drift, stale-knowledge, and change-impact analysis;
 - read-only Git evidence and source-anchored outputs;
-- SQLite and PostgreSQL storage paths;
+- PostgreSQL as live operational authority, with verified SQLite backup and offline operation;
 - CLI, API, and MCP access;
 - DB-native architecture-document and UML authoring with deterministic export;
 - a governed pilot profile for bounded, supervised agent changes;
 - an external-host protocol under which agent work is claimed by lease at `/agent-hosts/claims`,
   not dispatched in-process at `/dispatch`; and
-- append-only revision, observability, recovery, and reproducible package-validation foundations.
+- append-only revision, observability, recovery, and reproducible package-validation foundations;
+- immutable project-isolated SysML v2 histories with deterministic AKDB reconciliation; and
+- task-, plan-, module-, agent-, and session-bound bitemporal memory workspaces.
 
-The packaged release remains `0.3.0`; later capabilities are versioned internal implementation and
-have not yet been declared a broader release. The system is currently an engineering preview. It is
-not presented as a generally available production service, a completed enterprise platform, or
-externally validated customer software.
+The system remains an engineering preview. Version `0.4.0` identifies one coherent implementation
+line; it is not presented as a generally available production service, a completed enterprise
+platform, or externally validated customer software.
 
-## P0 integrity program
+## P0-P13 integrity program
 
-Current governed work is P0, not a product-scale-out phase.
+The former wave-by-wave P0 snapshot is retired. The versioned implementation now contains P0-P13:
+truth integrity, projections and locators, conformance workflow trace, operation and schema
+contracts, governed proposals, cockpit and tenant isolation, distributed recovery, connectors,
+evidence lifecycle, multilingual retrieval, bitemporal memory, and stakeholder/SysML visibility.
 
-- **Plan:** `plan-akdb-p0-truth-integrity`, revision 7, approved.
-- **Plan hash:** `49eeeb5255935c5c658378dd1da5165c159b1a88f23c3a0426d4eadedec90e24`.
-- **Pin:** `p0/plan-pin-f4129d7`.
-
-Waves 1–4 were merged onto that pin. Wave 5 (`p0-validation-findings`) is also merged onto the pin:
-PR #8 merge `6fb7a9f` (parents `fe4bddbc` + `d4841d2`); PR #9 merge `bb60575` (parents `6fb7a9f` +
-`f5e63cf`). Those identifiers refer to the private implementation record; they are not public
-repository URLs.
-
-P0 is not complete. Later P0 waves are not done. This page does not claim that CI is green.
-
-Named master-profile exceptions remain in force:
-
-- `src_akdb_cli`
-- `src_contextops_api` (N-1)
-- time-limited `src_akdb_mcp`
-- migrations file count 87 → 89 → 91, by approved migrations
-
-Those exceptions close at C1–C5 **before P1**. P1 is locked until P0 completes **and** the C1–C5
-bundle is revised. Later phases, including P6, are not in progress.
-
-A `kind: git_revision` marker is not a verified content-integrity anchor. It is matched by regex
-only; it is not checked against git.
+Plan-chain references are governed by revision and content hash. SysML history is a separate,
+immutable project-local commit graph and does not replace the AKDB plan, evidence, or source
+authority. No solution-family label merges independent project databases.
 
 ## Evidence boundary
 
@@ -110,8 +94,8 @@ ROI, high availability, RPO/RTO, multi-tenancy, or compliance certification.
 
 ## Current development focus
 
-The active governed work is P0, as described above. Until P0 completes and the C1–C5 bundle is
-revised, P1 and later phases are not in progress.
+The active work is release consolidation and external proof, not another internal phase-number
+claim.
 
 After that lock lifts, the release path still has to demonstrate the following. These are not a
 schedule, not a claim that the work has started, and not shipped promises:
