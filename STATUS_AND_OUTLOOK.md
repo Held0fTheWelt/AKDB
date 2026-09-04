@@ -1,8 +1,8 @@
 # Status and Outlook
 
-**Status date:** 29 August 2026
+**Status date:** 4 September 2026
 
-**AKDB release line:** `0.4.0`
+**AKDB release line:** `0.5.0`
 
 This document separates what exists today from what still has to be demonstrated. It describes the
 work at a public, decision-useful level and contains no trade secrets, credentials, customer data,
@@ -15,7 +15,7 @@ below is a shipped promise except where it says so.
 
 | Component | Maturity | What that means |
 |---|---|---|
-| ArchitecturalKnowledgeDB | Engineering preview, release line `0.4.0` | P0-P13, SysML v2, governed evidence, and temporal memory are implemented; broader production readiness is not claimed |
+| ArchitecturalKnowledgeDB | Engineering preview, release line `0.5.0` | P0-P13, SysML v2, governed evidence, temporal memory, and persisted diagnostics are implemented; broader production readiness is not claimed |
 | ContextOps control plane | Implemented internally, unreleased | PostgreSQL is live operational truth; jobs, runs, and leases are the execution ledger; no external operation, no delivery model |
 | Agent Collaboration Plane | Architecture accepted, read layer implemented | Client-agnostic MCP reads work; the wider operating model is partly built |
 | Tiny Tool Observatory | Implemented local workbench | Internal maintainer tooling; not offered as a product |
@@ -39,18 +39,26 @@ The implementation supports:
   not dispatched in-process at `/dispatch`; and
 - append-only revision, observability, recovery, and reproducible package-validation foundations;
 - immutable project-isolated SysML v2 histories with deterministic AKDB reconciliation; and
-- task-, plan-, module-, agent-, and session-bound bitemporal memory workspaces.
+- task-, plan-, module-, agent-, and session-bound bitemporal memory workspaces;
+- persisted diagnostic runs, results, findings, and dated observations across environment,
+  liveness, jobs, evidence gates, delivery registers, and derived knowledge;
+- delivery binding from approved plan revisions and work packages to impact declarations,
+  invalidation footprints, lineage, and examined evidence; and
+- governed remedy proposals plus a container deployment path for the external Agent Host.
 
-The system remains an engineering preview. Version `0.4.0` identifies one coherent implementation
+The system remains an engineering preview. Version `0.5.0` identifies one coherent implementation
 line; it is not presented as a generally available production service, a completed enterprise
 platform, or externally validated customer software.
 
-## P0-P13 integrity program
+## P0-P13 foundation and 0.5.0 diagnostic extension
 
 The former wave-by-wave P0 snapshot is retired. The versioned implementation now contains P0-P13:
 truth integrity, projections and locators, conformance workflow trace, operation and schema
 contracts, governed proposals, cockpit and tenant isolation, distributed recovery, connectors,
 evidence lifecycle, multilingual retrieval, bitemporal memory, and stakeholder/SysML visibility.
+Version 0.5.0 adds a persisted diagnostic and delivery-trace layer over that foundation. A verdict
+records its examination scope; absent evidence remains unverifiable instead of being interpreted as
+clean; and a proposed repair remains subject to the same governed authority and human decision path.
 
 Plan-chain references are governed by revision and content hash. SysML history is a separate,
 immutable project-local commit graph and does not replace the AKDB plan, evidence, or source
@@ -69,6 +77,10 @@ authority. No solution-family label merges independent project databases.
 - overlapping write sets, invalid leases, failed gates, and agent promotion attempts fail closed in
   that profile;
 - reference and synthetic five-human/five-agent scenarios are automated for SQLite and PostgreSQL;
+- diagnostics record dated observations and isolate individual check failures instead of turning
+  one unavailable check into a false whole-system verdict;
+- delivered work can retain its approved plan/package binding, declared impact, invalidation
+  footprint, and lineage for later re-examination;
 - ADR and DB-canonical document changes have append-only revisions, stale-write protection,
   approval references, and revert-as-new-revision;
 - the documentation pipeline is exercised continuously against the maintainer's own architecture

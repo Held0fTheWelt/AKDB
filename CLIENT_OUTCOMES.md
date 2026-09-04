@@ -22,6 +22,10 @@ after the engagement ends.
 - bounded temporal memory and explicit handoffs across a task, plan, or module without collapsing
   project knowledge bases into one global agent memory;
 - explicit scope boundaries: which projects, paths, and tools an agent may touch;
+- evidence-backed diagnostic summaries that separate observed facts, findings, and unverifiable
+  conditions instead of collapsing them into one health label;
+- trace from approved plan and package scope to delivered change, declared impact, and affected
+  knowledge;
 - a review path where the agent prepares and a human decides; and
 - where appropriate, a bounded governed-change pilot with evidence gates, human approval, and a
   documented recovery path.
@@ -47,6 +51,7 @@ can include:
 - the agreed repository baseline, architecture-context snapshot, and permitted change scope;
 - explicit path/write-set boundaries and review ownership;
 - a record of lease, run, evidence, gate, and human-decision events;
+- dated diagnostic observations, delivery lineage, and knowledge marked for re-examination;
 - validation results and unresolved architecture questions;
 - a linked recovery or rollback procedure; and
 - measured operator effort, runtime, missing context, and decision value.

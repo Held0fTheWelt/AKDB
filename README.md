@@ -15,11 +15,13 @@ commercial terms, or the internal operating model.
 
 ## Current status
 
-**Status date: 29 August 2026.** AKDB version `0.4.0` integrates the P0-P13 governance and evidence
-chain. It adds project-isolated SysML v2 repositories and reconciliation, stakeholder viewpoints,
-assurance cases, bitemporal task/plan/module memory workspaces, governed connectors, and a
-PostgreSQL-first operating model. The package, API, CLI, and MCP surfaces report the same version;
-the release validator reproduces the wheel and checks those surfaces from a clean installation.
+**Status date: 4 September 2026.** AKDB version `0.5.0` extends the P0-P13 governance and evidence
+chain with persisted system diagnostics, dated observations, plan-to-delivery binding, declared
+change impact and invalidation footprints, governed remedy proposals, and a container deployment
+path for the external Agent Host. Project-isolated SysML v2 repositories, stakeholder viewpoints,
+assurance cases, bitemporal task/plan/module memory workspaces, governed connectors, and the
+PostgreSQL-first operating model remain part of the release line. The package, API, CLI, and MCP
+surfaces report the same version.
 
 This is still an engineering-preview boundary, not a claim that every environment, integration, or
 deployment profile is production-ready. External pilot evidence, independent security review,
@@ -63,7 +65,8 @@ Bounded agent work runs under an external-host protocol: the server does not sta
 as children, and hosts pull work through `/agent-hosts/claims` rather than an in-process `/dispatch`.
 Hosts register, claim queued work under a lease, heartbeat, emit idempotent events, and complete or
 fail explicitly. Around that sit attention and read-tier policies, an append-only ledger, participant
-presence and floor coordination, and structured team-meeting contracts.
+presence and floor coordination, structured team-meeting contracts, and a persisted diagnostic
+model that distinguishes observations, findings, verdicts, and the evidence each verdict examined.
 
 **Agent Collaboration Plane — the access model.**
 One client-agnostic MCP layer so that any agent — Claude Code, Codex, Cursor, or another MCP client —
@@ -100,6 +103,10 @@ marked so that nobody mistakes intent for delivery.
 - Temporarily bridgeable agent memory bounded by task, plan, module, session, sensitivity, and TTL
 - Reviewable change-impact and architecture-review outputs
 - A bounded governed-change path with explicit scope, leases, evidence gates, and human approval
+- Dated operational diagnostics for environment readiness, host presence, blocked work, evidence
+  gates, delivery registers, and derived knowledge
+- Trace from an approved plan revision and work package to delivered changes, declared impact, and
+  knowledge that may need re-examination
 - Local-first operation suitable for sensitive or long-lived software projects
 
 ## What is demonstrated internally
@@ -111,6 +118,10 @@ marked so that nobody mistakes intent for delivery.
   agents are automated for both SQLite and PostgreSQL.
 - Overlapping write sets, expired or revoked leases, failed gates, and agent-side promotion attempts
   are handled fail-closed in that defined profile.
+- Diagnostic runs persist what was examined and treat absent or unverifiable evidence as a finding,
+  while eligible findings can prepare reviewable remedy proposals without self-approving them.
+- Delivery evidence can be bound to an approved plan revision, work package, impact declaration,
+  invalidation footprint, and lineage record.
 - The documentation pipeline runs against the maintainer's own architecture corpus — the stack is
   applied to itself, which is where most of its defects are found.
 - Existing records for six maintained projects have been reconciled into separate SysML v2 models;

@@ -11,6 +11,8 @@ project or an autonomous Git merge.
 
 - Repository baseline: recorded before execution
 - Architecture context: affected decisions, constraints, diagrams, and source areas
+- Plan binding: approved plan revision and work package
+- Declared impact: session persistence behavior and adapter wiring
 - Permitted paths: adapter implementation and its tests
 - Excluded paths: domain policy, token handling, deployment configuration
 - Review owner: a human platform-architecture reviewer
@@ -19,10 +21,13 @@ project or an autonomous Git merge.
 
 1. The task receives an explicit write set and a bounded lease.
 2. A conflicting task targeting the same paths is rejected while that lease is active.
-3. The agent records change and validation evidence but cannot approve its own promotion.
-4. Required tests and architecture checks are evaluated as gates.
+3. The agent records change, lineage, invalidation footprint, and validation evidence but cannot
+   approve its own promotion.
+4. Required tests and architecture checks are evaluated as gates, with the examined evidence
+   retained alongside the verdict.
 5. A human reviewer accepts, rejects, or requests revision.
-6. The decision retains a linked recovery or rollback path.
+6. The decision retains a linked recovery or rollback path and the affected knowledge is queued for
+   re-examination.
 
 ## Fail-closed examples
 

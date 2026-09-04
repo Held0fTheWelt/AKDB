@@ -28,6 +28,8 @@ The core questions are:
 7. What happens when scope overlaps, authority expires, or a gate fails?
 8. Which structural, behavioral, requirements, and assurance view does a human stakeholder need?
 9. Which knowledge may an agent carry temporarily between tasks or modules, and when must it expire?
+10. What evidence did a system verdict actually examine, and what knowledge must be re-examined
+    after a change?
 
 The relevant operating pressure is the number and dependency of concurrent changes relative to the
 capacity to review and approve them—not a fixed minimum number of developers.
