@@ -13,7 +13,7 @@ token handling remain outside scope.
 
 **Lease result:** granted; no overlapping active write set detected.
 
-**Evidence gates:**
+**Evidence gates (illustrative values, not an executed test receipt):**
 
 | Gate | Result | Evidence |
 | --- | --- | --- |
@@ -32,3 +32,11 @@ affected; the verdict records the evidence it examined.
 
 This example is illustrative. It is not a customer result, production SLA, or claim of autonomous
 Git merge execution.
+
+## Reader-facing interpretation
+
+The example change remains pending. The illustrative passing scope and test rows do
+not override the unresolved architecture review or supply a human promotion decision.
+The reader can inspect the source references and request the missing migration
+evidence. Missing evidence must remain visible rather than being summarized as an
+all-green result.

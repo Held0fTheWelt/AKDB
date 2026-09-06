@@ -15,25 +15,24 @@ commercial terms, or the internal operating model.
 
 ## Current status
 
-**Status date: 4 September 2026.** AKDB version `0.5.0` extends the P0-P13 governance and evidence
-chain with persisted system diagnostics, dated observations, plan-to-delivery binding, declared
-change impact and invalidation footprints, governed remedy proposals, and a container deployment
-path for the external Agent Host. Project-isolated SysML v2 repositories, stakeholder viewpoints,
-assurance cases, bitemporal task/plan/module memory workspaces, governed connectors, and the
-PostgreSQL-first operating model remain part of the release line. The package, API, CLI, and MCP
-surfaces report the same version.
+**Status date: 6 September 2026.** The tagged AKDB **0.5.0** baseline remains distinct
+from active **0.6 development**. The baseline includes project-scoped knowledge,
+SysML v2 views, temporal context, governed change, persisted diagnostics and delivery
+trace. Newer development extends human-readable application results, source-bound
+investigation and compiled application access. Portable workflows are being developed
+with their own scope and qualification; they are not the complete server stack on
+another device.
 
-This is still an engineering-preview boundary, not a claim that every environment, integration, or
-deployment profile is production-ready. External pilot evidence, independent security review,
-licensing/distribution decisions, and a full clean-revision validation remain explicit gates. This
-page does not turn partial or isolated test evidence into a general "CI green" claim.
+AKDB remains an engineering preview. Component implementations, authored plans,
+synthetic tests and device observations establish different things. No individual
+pass qualifies the complete product or every deployment profile. Broader automated
+analysis and remedy integration remains development work.
 
-AKDB is an engineering preview, not a generally available production product. The tools described
-below are internal implementations at varying maturity, from running systems to stated target
-architecture. Everything on this page distinguishes the two. Operation on an independent customer
-repository, external security review, repeatable customer delivery, and product-market evidence have
-not yet been demonstrated. See [Status and Outlook](STATUS_AND_OUTLOOK.md) for the P0 pin record, the
-named exceptions, the evidence boundary, and the outlook.
+External evaluation, independent security review, repeatable customer delivery and
+complete release validation remain explicit gates. No customer effectiveness,
+productivity, financial or commercial-success result is claimed. See
+[Status and Outlook](STATUS_AND_OUTLOOK.md) for component maturity, evidence limits
+and the next evaluation steps.
 
 ## The problem
 
@@ -67,6 +66,13 @@ Hosts register, claim queued work under a lease, heartbeat, emit idempotent even
 fail explicitly. Around that sit attention and read-tier policies, an append-only ledger, participant
 presence and floor coordination, structured team-meeting contracts, and a persisted diagnostic
 model that distinguishes observations, findings, verdicts, and the evidence each verdict examined.
+
+**Compiled application access — active development.**
+Human-readable results and structured automation access serve different users of
+the same knowledge. Current work extends multi-project application and portable
+workflows while keeping ownership and recovery explicit. Feature availability and
+qualification differ by operating profile; a compiled build does not establish
+production readiness or device-wide service equivalence.
 
 **Agent Collaboration Plane — the access model.**
 One client-agnostic MCP layer so that any agent — Claude Code, Codex, Cursor, or another MCP client —
@@ -153,8 +159,11 @@ For implementation, integration, or a project-specific assessment, contact the a
 
 ## Public disclosure boundary
 
-Everything in this repository is intentionally approved for public disclosure. It contains no trade
+This showcase is limited to public capability descriptions and synthetic examples. It contains no trade
 secrets, credentials, customer data, commercial terms, pricing, or non-public implementation source.
 AKDB and the surrounding tools remain proprietary technology; the descriptive material and synthetic
 examples in this showcase do not grant access to the implementation and do not represent customer
 projects.
+
+Updates to this showcase do not themselves authorize publication of private implementation,
+release artifacts or commercial material.

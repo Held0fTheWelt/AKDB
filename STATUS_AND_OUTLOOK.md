@@ -1,8 +1,10 @@
 # Status and Outlook
 
-**Status date:** 4 September 2026
+**Status date:** 6 September 2026
 
-**AKDB release line:** `0.5.0`
+**Tagged AKDB baseline:** `0.5.0`
+
+**Active development:** `0.6`; not a completed release
 
 This document separates what exists today from what still has to be demonstrated. It describes the
 work at a public, decision-useful level and contains no trade secrets, credentials, customer data,
@@ -16,6 +18,8 @@ below is a shipped promise except where it says so.
 | Component | Maturity | What that means |
 |---|---|---|
 | ArchitecturalKnowledgeDB | Engineering preview, release line `0.5.0` | P0-P13, SysML v2, governed evidence, temporal memory, and persisted diagnostics are implemented; broader production readiness is not claimed |
+| Compiled application access | Active development | Human-readable results and multi-project workflows have component evidence; complete release qualification remains open |
+| Native portable workflows | Active development, separately qualified | Selected local operations exist; full service parity and recovery are not implied |
 | ContextOps control plane | Implemented internally, unreleased | PostgreSQL is live operational truth; jobs, runs, and leases are the execution ledger; no external operation, no delivery model |
 | Agent Collaboration Plane | Architecture accepted, read layer implemented | Client-agnostic MCP reads work; the wider operating model is partly built |
 | Tiny Tool Observatory | Implemented local workbench | Internal maintainer tooling; not offered as a product |
@@ -46,9 +50,9 @@ The implementation supports:
   invalidation footprints, lineage, and examined evidence; and
 - governed remedy proposals plus a container deployment path for the external Agent Host.
 
-The system remains an engineering preview. Version `0.5.0` identifies one coherent implementation
-line; it is not presented as a generally available production service, a completed enterprise
-platform, or externally validated customer software.
+The system remains an engineering preview. The tagged `0.5.0` baseline does not describe
+every newer application component. Active `0.6` development does not constitute a completed
+release, generally available production service or externally validated customer software.
 
 ## P0-P13 foundation and 0.5.0 diagnostic extension
 
@@ -96,7 +100,9 @@ authority. No solution-family label merges independent project databases.
 - repeatability across more than one independent project; and
 - a validated delivery, partnership, or product model.
 
-Internal test coverage is evidence of implementation quality. It is not evidence of customer need,
+Synthetic tests support the behavior examined in their fixtures. Device observations apply
+to the observed version and actions, not automatically to later packages or all functions.
+Neither establishes customer need,
 production suitability, or commercial traction.
 
 The governed profile does not claim that every mutation by arbitrary processes or database
@@ -106,25 +112,31 @@ ROI, high availability, RPO/RTO, multi-tenancy, or compliance certification.
 
 ## Current development focus
 
-The active work is release consolidation and external proof, not another internal phase-number
-claim.
+Current work extends source-bound investigation, human-readable application results
+and compiled application access. Portable workflows add ways to work with local
+knowledge while retaining separate ownership, integration and recovery requirements.
+An implemented local operation is not full shared-service parity, and creating a
+recovery copy is not a completed operational recovery workflow.
 
-After that lock lifts, the release path still has to demonstrate the following. These are not a
-schedule, not a claim that the work has started, and not shipped promises:
+The broader analysis, review and remedy route includes authored plans and further
+integration work. Existing diagnostic capabilities should not be mistaken for
+completion of that route. A plan establishes intent and acceptance criteria;
+delivery needs its own evidence.
 
-1. **External transferability:** prove decision value on a repository outside the maintainer's test
-   estate, beginning read-only or with a narrowly governed write scope.
-2. **Release integrity:** validate package, interfaces, supported storage paths, documentation, and
-   deployment evidence on one clean revision.
-3. **Operational assurance:** complete independent security review, secret and dependency review,
-   restore exercises, and realistic operator/support measurements.
-4. **Delivery evidence:** define the bounded service or product package, customer responsibilities,
-   deletion and rollback terms, and measurable acceptance criteria.
-5. **Closing the record:** make every published artefact derivable from the authority, so that no
-   part of the documentation survives only because a repair routine knows where to find it.
+The next steps are evidence-led rather than a promised schedule:
 
-A capability becomes part of a release only after it is versioned, documented, and validated on the
-same revision.
+1. **Release integrity:** validate packages, interfaces, supported operating profiles
+   and documentation against a reproducible source baseline.
+2. **Operational assurance:** qualify security, authorization, recovery and realistic
+   operator/support needs for each supported profile.
+3. **External transferability:** evaluate a bounded task outside the maintainer's own
+   test estate and record correctness, missing context and review effort.
+4. **Repeatability:** assess more than one independent cycle before generalizing
+   effectiveness or selecting a wider delivery model.
+
+Product qualification, independently observed value and commercial approval are
+separate decisions. None can be inferred solely from a test group, a rendered
+interface or a version number.
 
 ## Release gates
 
@@ -145,9 +157,10 @@ authoritative, traceable, and reviewable than a search result or a prompt-sized 
 credible opportunity is a sovereign context and control layer for complex or sensitive software
 systems — one that stays local, keeps its record inspectable, and puts a human at the decision point.
 
-The direction beyond that is stated openly and marked as intent: making operator functions usable
+A separate longer-term direction remains stated intent: making operator functions usable
 away from a desk, as spatial workflows on a headset, with the device owning its runtimes and local
-data rather than mirroring a remote UI. That target architecture is reviewed. It is not built.
+data rather than mirroring a remote UI. That spatial target remains distinct from the portable application work described above;
+progress in one is not evidence that the other has been delivered.
 
 The outlook remains deliberately evidence-led:
 

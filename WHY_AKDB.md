@@ -54,3 +54,15 @@ So the surrounding tools are deliberately separate and deliberately subordinate:
 
 Each is useful without the others. None of them is allowed to overrule the record. That constraint
 is what makes the record worth keeping.
+
+## Reviewable context, with visible limits
+
+Current development makes it easier to follow a finding back to its sources and
+to read an operation's outcome in application views. The central question remains
+what the evidence supports. An inventory can be complete while its interpretation
+is wrong; a missing relationship can reflect missing source coverage rather than
+absence of a dependency.
+
+AKDB therefore supports a review process rather than replacing engineering judgment.
+See [how the approach works](HOW_IT_WORKS.md) and
+[current maturity](STATUS_AND_OUTLOOK.md) for capabilities and boundaries.

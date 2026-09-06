@@ -61,6 +61,28 @@ to a task, plan, module, agent, or session. Explicit handoffs bridge selected kn
 TTL, sensitivity, egress policy, and token budget prevent the bridge from becoming an ungoverned
 global memory.
 
+## Reviewing a result
+
+A useful result needs both an understandable conclusion and a route back to its
+sources. Human-readable application views support that review while structured
+interfaces remain available to automation. The reviewer should be able to distinguish
+observations, inferred relationships, missing coverage and actions that still need
+a decision.
+
+Source-bound navigation and bounded comparisons help investigate a proposed change.
+They do not establish universal code understanding or prove that every dependency
+has been found. The broader automated analysis-and-remedy workflow remains separate
+from these implemented review capabilities.
+
+## Operating profiles
+
+Server and portable application profiles have different scope and qualification.
+A local copy or view does not automatically become a second authoritative database.
+Current compiled application work extends access to knowledge and local workflows;
+integration, authorization and recovery still need qualification for the selected
+profile. The [status overview](STATUS_AND_OUTLOOK.md) separates these developments
+from completed release claims.
+
 ## Governed change loop
 
 For a deliberately bounded agent-assisted change, the reviewed internal pilot profile adds a control

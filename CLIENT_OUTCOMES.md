@@ -1,15 +1,17 @@
 # What clients receive
 
-Engagements are outcome-oriented. The deliverable is not a database, a server, or an integration; it
-is a more reliable way to understand and change a software system, and a record that stays useful
-after the engagement ends.
+A project-specific evaluation can produce the outputs below. They describe possible
+deliverables, not completed customer engagements or guaranteed improvements. Scope
+and acceptance depend on the available sources and the operating profile qualified
+for the work.
 
 ## Understanding an existing system
 
 - a structured view of the project's architectural decisions and constraints;
 - source-anchored context packs for recurring engineering tasks;
 - a report of stale, contradictory, or disconnected architecture knowledge;
-- a change-impact view before a major refactoring or feature;
+- a change-impact view before a major refactoring or feature, with source coverage
+  and uncertain relationships made explicit;
 - separate human-readable structural, behavioral, requirements, and evidence views generated from
   a project-local SysML v2 history;
 - an onboarding package for engineers joining a complex project; and
@@ -52,7 +54,8 @@ can include:
 - explicit path/write-set boundaries and review ownership;
 - a record of lease, run, evidence, gate, and human-decision events;
 - dated diagnostic observations, delivery lineage, and knowledge marked for re-examination;
-- validation results and unresolved architecture questions;
+- human-readable findings with source references, validation scope and unresolved
+  architecture questions;
 - a linked recovery or rollback procedure; and
 - measured operator effort, runtime, missing context, and decision value.
 
@@ -66,3 +69,8 @@ environment; synthetic internal validation cannot establish them in advance.
 - that a knowledge layer removes the need for an architecture owner; or
 - a productivity, ROI, availability, or compliance figure that has not been measured in the
   environment it is quoted for.
+
+Application or portable access may support an evaluation where the selected profile
+is qualified for it. It is not an implied promise of complete service availability,
+device acceptance or operational recovery. Preparation, review and ongoing knowledge
+maintenance must be measured separately; released capacity is not automatically cash savings.
