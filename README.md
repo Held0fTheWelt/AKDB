@@ -15,13 +15,14 @@ commercial terms, or the internal operating model.
 
 ## Current status
 
-**Status date: 6 September 2026.** The tagged AKDB **0.5.0** baseline remains distinct
+**Status date: 10 September 2026.** The tagged AKDB **0.5.0** baseline remains distinct
 from active **0.6 development**. The baseline includes project-scoped knowledge,
 SysML v2 views, temporal context, governed change, persisted diagnostics and delivery
 trace. Newer development extends human-readable application results, source-bound
-investigation and compiled application access. Portable workflows are being developed
-with their own scope and qualification; they are not the complete server stack on
-another device.
+investigation and compiled application access. Native Xbox work now includes local
+knowledge operations, retrieval and recovery, with bounded desktop verification and
+separate device evidence. It makes a compact workspace for restricted environments
+a more concrete development direction; complete server equivalence remains open.
 
 AKDB remains an engineering preview. Component implementations, authored plans,
 synthetic tests and device observations establish different things. No individual
@@ -69,10 +70,12 @@ model that distinguishes observations, findings, verdicts, and the evidence each
 
 **Compiled application access — active development.**
 Human-readable results and structured automation access serve different users of
-the same knowledge. Current work extends multi-project application and portable
-workflows while keeping ownership and recovery explicit. Feature availability and
-qualification differ by operating profile; a compiled build does not establish
-production readiness or device-wide service equivalence.
+the same knowledge. The native Xbox workspace explores how selected knowledge
+functions can run beside locally held data, with packaged software and local
+retrieval instead of a separate server for each function. This matters where
+project material must stay within a controlled environment and additional
+infrastructure is costly to introduce. The scope is qualified function by function;
+reduced setup and support effort still needs measurement in an actual deployment.
 
 **Agent Collaboration Plane — the access model.**
 One client-agnostic MCP layer so that any agent — Claude Code, Codex, Cursor, or another MCP client —

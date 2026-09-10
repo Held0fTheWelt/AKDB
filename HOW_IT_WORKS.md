@@ -77,11 +77,16 @@ from these implemented review capabilities.
 ## Operating profiles
 
 Server and portable application profiles have different scope and qualification.
-A local copy or view does not automatically become a second authoritative database.
-Current compiled application work extends access to knowledge and local workflows;
-integration, authorization and recovery still need qualification for the selected
-profile. The [status overview](STATUS_AND_OUTLOOK.md) separates these developments
-from completed release claims.
+The native Xbox work brings local storage, retrieval and selected knowledge
+operations into a packaged workspace. Its local embedding component can run
+offline; this is a bounded retrieval capability, not a general-purpose local AI
+assistant. External providers are separate integration choices.
+
+For a restricted environment, the intended benefit is fewer services to introduce
+and less need to move project material outside its boundary. A local copy still
+needs explicit ownership, permissions and a controlled update and recovery path.
+The [status overview](STATUS_AND_OUTLOOK.md) distinguishes desktop checks, device
+observations and the remaining qualification of the complete operating profile.
 
 ## Governed change loop
 

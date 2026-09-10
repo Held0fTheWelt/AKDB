@@ -62,6 +62,14 @@ can include:
 Customer outcomes, productivity effects, and repeatability must be measured in the customer's own
 environment; synthetic internal validation cannot establish them in advance.
 
+For teams whose project material must stay inside a controlled environment, native
+workspace development opens an additional evaluation question: which knowledge
+tasks can be handled locally, with fewer separately operated services? A suitable
+case would measure installation and update effort, permitted data movement, review
+quality and recovery alongside the task result. The Xbox work supplies a concrete
+engineering basis for that question; it does not yet establish suitability for a
+particular sensitive environment or lower operating cost.
+
 ## What is deliberately not promised
 
 - that an agent can be trusted to merge its own work;
@@ -70,7 +78,5 @@ environment; synthetic internal validation cannot establish them in advance.
 - a productivity, ROI, availability, or compliance figure that has not been measured in the
   environment it is quoted for.
 
-Application or portable access may support an evaluation where the selected profile
-is qualified for it. It is not an implied promise of complete service availability,
-device acceptance or operational recovery. Preparation, review and ongoing knowledge
-maintenance must be measured separately; released capacity is not automatically cash savings.
+Preparation, review and ongoing knowledge maintenance must be measured separately;
+released capacity is not automatically cash savings.

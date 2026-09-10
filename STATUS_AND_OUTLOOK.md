@@ -1,6 +1,6 @@
 # Status and Outlook
 
-**Status date:** 6 September 2026
+**Status date:** 10 September 2026
 
 **Tagged AKDB baseline:** `0.5.0`
 
@@ -19,7 +19,7 @@ below is a shipped promise except where it says so.
 |---|---|---|
 | ArchitecturalKnowledgeDB | Engineering preview, release line `0.5.0` | P0-P13, SysML v2, governed evidence, temporal memory, and persisted diagnostics are implemented; broader production readiness is not claimed |
 | Compiled application access | Active development | Human-readable results and multi-project workflows have component evidence; complete release qualification remains open |
-| Native portable workflows | Active development, separately qualified | Selected local operations exist; full service parity and recovery are not implied |
+| Native Xbox workspace | Implemented capabilities with bounded desktop verification; device qualification incomplete | Local knowledge, retrieval and recovery work extends the portable profile; full AKDB equivalence and suitability for sensitive deployments remain open |
 | ContextOps control plane | Implemented internally, unreleased | PostgreSQL is live operational truth; jobs, runs, and leases are the execution ledger; no external operation, no delivery model |
 | Agent Collaboration Plane | Architecture accepted, read layer implemented | Client-agnostic MCP reads work; the wider operating model is partly built |
 | Tiny Tool Observatory | Implemented local workbench | Internal maintainer tooling; not offered as a product |
@@ -113,10 +113,24 @@ ROI, high availability, RPO/RTO, multi-tenancy, or compliance certification.
 ## Current development focus
 
 Current work extends source-bound investigation, human-readable application results
-and compiled application access. Portable workflows add ways to work with local
-knowledge while retaining separate ownership, integration and recovery requirements.
-An implemented local operation is not full shared-service parity, and creating a
-recovery copy is not a completed operational recovery workflow.
+and compiled application access. The Xbox work adds a concrete route towards a
+self-contained knowledge workspace: local databases, knowledge revisions, persistent
+retrieval, an offline embedding component and controlled recovery operations.
+Recent desktop checks cover restart persistence, conflicting revisions, interrupted
+storage operations and refusal of invalid inputs. These establish bounded behavior,
+not complete device or server equivalence.
+
+The practical prospect is useful knowledge work inside a restricted environment
+without introducing the full server deployment at every point of use. Keeping
+selected data and processing local can reduce external dependencies. It does not
+by itself establish a secure air-gapped deployment: access controls, network paths,
+updates, recovery and operating effort need qualification for the intended setting.
+
+Recorded physical Xbox evidence includes startup and read-only diagnostics for a
+specific earlier package. The latest package is recorded as installed, but its full
+command behavior has not been accepted on the device. Comparison against the AKDB
+server remains an open gate. Local recovery implementation has progressed beyond
+preparing copies; operational recovery on the target device still needs proof.
 
 The broader analysis, review and remedy route includes authored plans and further
 integration work. Existing diagnostic capabilities should not be mistaken for
